@@ -3,11 +3,6 @@
   gap: var(--gap, 1rem);
 }
 
-/* .grid {
-  display: grid;
-  gap: var(--gap, 1rem);
-} */
-
 .text-black {
   color: black;
 }
@@ -79,12 +74,6 @@ body {
   font-weight: 700;
   margin-inline-end: .75em;
 }
-
-/* //// Does the same thing as the CSS class above, but targets span elements instead. */
-/* .privary-nav a > span {
-  font-weight: 700;
-  margin-inline-end: .75em;
-} */
 
 @media (max-width: 35em) {
   .primary-nav {
