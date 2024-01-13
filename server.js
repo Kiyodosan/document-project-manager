@@ -16,7 +16,10 @@ const hbs = exphbs.create({ helpers });
 const sess = {
   secret: 'cookie monster',
   cookie: {
-    //// add cookie info here
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
   },
   resave: false,
   saveUninitialized: true,
