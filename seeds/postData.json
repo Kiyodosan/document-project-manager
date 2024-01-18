@@ -1,0 +1,17 @@
+[
+    {
+        "postName": "Post1",
+        "username": "usernameText",
+        "created on": "1/15/2024"
+    },
+    {
+        "postName": "Post2",
+        "username": "usernameText2",
+        "created on": "1/09/2024"
+    },
+    {
+        "postName": "Post3",
+        "username": "usernameText3",
+        "created on": "1/01/2024"
+    }
+]
