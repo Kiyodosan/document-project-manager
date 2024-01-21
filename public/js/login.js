@@ -18,7 +18,6 @@ const loginFormHandler = async (event) => {
       }
     }
   };
-// Sign up portion of form 
   
   
   document
