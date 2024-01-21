@@ -15,24 +15,25 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    contents: {
+    content: {
       type: DataTypes.STRING,
+      allowNull: false
     },
     date_created: {
     	type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
     },
-		like_count: {
+/* 		like_count: {
 			type: DataTypes.INTEGER,
 			defaultValue: 0,
-		},
+		}, */
     comments: {
 			type: DataTypes.STRING,
     },
-		comments_like_count: {
+/* 		comments_like_count: {
 			type: DataTypes.INTEGER,
 			defaultValue: 0,
-		},
+		}, */
     user_id: {
       type: DataTypes.INTEGER,
       references: {
