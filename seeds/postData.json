@@ -1,17 +1,17 @@
 [
     {
-        "postName": "Post1",
-        "username": "usernameText",
-        "created on": "1/15/2024"
+        "title": "Post1",
+        "content": "Post 1 content",
+        "date_created": "1/15/2024"
     },
     {
-        "postName": "Post2",
-        "username": "usernameText2",
-        "created on": "1/09/2024"
+        "title": "Post2",
+        "content": "Post 2 content",
+        "date_created": "1/09/2024"
     },
     {
-        "postName": "Post3",
-        "username": "usernameText3",
-        "created on": "1/01/2024"
+        "title": "Post3",
+        "content": "Post 3 content",
+        "date_created": "1/01/2024"
     }
 ]

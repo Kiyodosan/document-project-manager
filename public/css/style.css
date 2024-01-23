@@ -84,7 +84,6 @@ body {
     inset: 0 0 0 30%;
     
     flex-direction: column;
-    /* The min() function will choose the smallest of the size options, depending on the viewport size. */
     padding: min(30vh, 10rem) 2rem;
 
     transform: translateX(100%);
@@ -100,7 +99,7 @@ body {
     position: absolute;
     z-index: 9999;
     background-color: transparent;
-    background-image: url('assets/images/icons8-menu.svg');
+    background-image: url('/assets/images/icons8-menu.svg');
     background-repeat: no-repeat;
     background-size: contain;
     width: 2rem;
@@ -112,7 +111,7 @@ body {
   }
 
   .mobile-nav-toggle[aria-expanded="true"] {
-    background-image: url('assets/images/icons8-cancel.svg');
+    background-image: url('/assets/images/icons8-cancel.svg');
   }
 }
 
