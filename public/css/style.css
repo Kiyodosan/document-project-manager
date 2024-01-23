@@ -24,9 +24,9 @@ html {
 body {
   overflow-x:hidden;
 }
-
+ 
 .bg-image {
-  background-image: url('assets/images/hs-bg-image.jpg');
+  background-image: url('/assets/images/hs-bg-image.jpg');
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
