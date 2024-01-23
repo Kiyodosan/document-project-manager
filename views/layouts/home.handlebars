@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+</head>
+<body>
+    <header>
+        <h1>{{pageTitle}}</h1>
+    </header>
+    <main>
+        <div id="your-documents">
+            <h2>Your Documents</h2>
+            {{#if uploadedDocuments.length}}
+                {{#each uploadedDocuments}}
+                    <div>
+                        <p>Filename: {{dataValues.filename}}</p>
+                        <form action="/download-document" method="post">
+                            <input type="hidden" name="documentPath" value="{{dataValues.path}}">
+                            <button type="submit">Download</button>
+                        </form>
+                    </div>
+                {{/each}}
+            {{else}}
+                <p>No documents uploaded yet.</p>
+            {{/if}}
+        </div>
+
+        <section class="upload-document">
+            <h2>Upload a Document</h2>
+            <form action="/upload-document" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" required>
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
