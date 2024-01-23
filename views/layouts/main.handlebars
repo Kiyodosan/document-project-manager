@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Project Manager</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/nav.js" defer></script>
+</head>
+
+<body>
+  <header class="primary-header flex">
+    <div>
+      <img src="./assets/images/" alt="brand logo" class="nav-logo">
+    </div>
+  
+    <button class="mobile-nav-toggle fill" aria-controls="primary-nav" aria-expanded="false">
+      <span class="sr-only">Menu</span>
+    </button>
+  
+    <nav>
+      <ul id="primary-nav" data-visible="false" class="primary-nav flex">
+        <li class="active">
+          <a href="/" class="text-black text-size-1p5">Home</a>
+        </li>
+        <li>
+          <a href="/login" class="text-black text-size-1p5">Login</a>
+        </li>
+        <li>
+          <a href="/profile" class="text-black text-size-1p5">Profile</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>{{{body}}}</main>
+</body>
+</html>
