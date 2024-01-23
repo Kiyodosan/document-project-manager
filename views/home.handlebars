@@ -3,15 +3,15 @@
     <h1>Home</h1>
   </div>
   
-  {{#each Posts as |Post|}}
+  {{#each posts as |post|}}
   <article>
     <h2>
-      <a href="/post/{{Post.id}}">{{Post.title}}</a>
+      <a href="/post/{{post.id}}">{{post.title}}</a>
     </h2>
 
     <div>
-      <p>Created by: {{Post.user.name}}</p>
-      <p>Created on: {{format_date Post.date_created}}</p>
+      <p>Created by: {{post.user.name}}</p>
+      <p>Created on: {{format_date post.date_created}}</p>
     </div>
   </article>
   {{/each}}
