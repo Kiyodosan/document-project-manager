@@ -27,9 +27,9 @@ Post.init(
 			type: DataTypes.INTEGER,
 			defaultValue: 0,
 		}, */
-    comments: {
-			type: DataTypes.STRING,
-    },
+  
+// Got rid of comments datatype string
+
 /* 		comments_like_count: {
 			type: DataTypes.INTEGER,
 			defaultValue: 0,
