@@ -25,14 +25,14 @@ body {
   overflow-x:hidden;
 }
  
-.bg-image {
+/* .bg-image {
   background-image: url('/assets/images/hs-bg-image.jpg');
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
+} */
 
 /* primary header */
 .nav-logo {
@@ -112,6 +112,10 @@ body {
 
   .mobile-nav-toggle[aria-expanded="true"] {
     background-image: url('/assets/images/icons8-cancel.svg');
+  }
+
+  .nav-logo {
+    margin-top: 0.5rem;
   }
 }
 
