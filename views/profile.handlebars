@@ -4,11 +4,27 @@
   <section>
     <h3>New Post</h3>
 
+    {{!-- Upload widget --}}
+    <form id="uploadForm">
+      <div>
+        <input 
+          id="fileData"
+          type="hidden"
+          name="fileData"
+          role="uploadcare-uploader"
+        >
+      </div>
+
+      <input type="submit">
+    </form>
+    {{!-- /Upload widget --}}
+
     <form class="new-post-form">
       <div>
         <label for="post-title">Title</label>
         <input type="text" id="post-title" name="post-title" />
       </div>
+
       <div>
         <label for="post-content">Content</label>
         <textarea id="post-content" name="post-content"></textarea>
@@ -41,5 +57,15 @@
   </section>
   {{!-- {{/if}} --}}
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  <!-- jQuery CDN -->
+
+<script>
+  UPLOADCARE_LOCALE = "en";
+  UPLOADCARE_PUBLIC_KEY = "09da1b6a2310b78c7326";
+</script>
+
+<script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js" charset="utf-8"></script>
+<script type="module" src="/js/upload-widget.js"></script>
 
 <script src="./js/profile.js"></script>

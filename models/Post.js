@@ -23,6 +23,10 @@ Post.init(
     	type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
     },
+    file_url: {
+      type: DataTypes.STRING,
+      defaultValue: null,
+    },
 /* 		like_count: {
 			type: DataTypes.INTEGER,
 			defaultValue: 0,
