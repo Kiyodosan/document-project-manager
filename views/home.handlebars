@@ -1,0 +1,38 @@
+<section>
+  <div>
+    <h1>Home</h1>
+  </div>
+  
+  {{#each posts as |post|}}
+  <article>
+    <h2>
+      <a href="/post/{{post.id}}">{{post.title}}</a>
+    </h2>
+
+    <div>
+      <p>Created by: {{post.user.name}}</p>
+      <p>Created on: {{format_date post.date_created}}</p>
+    </div>
+
+    <!-- Display comments -->
+    <div>
+      <h3>Comments:</h3>
+      {{#each post.comments as |comment|}}
+        <div>
+          <p>{{comment.content}}</p>
+          <!-- Edit and Delete buttons for each comment -->
+          <button class="edit-comment-btn" data-comment-id="{{comment.id}}">Edit Comment</button>
+          <button class="delete-comment-btn" data-comment-id="{{comment.id}}">Delete Comment</button>
+        </div>
+      {{/each}}
+
+      <!-- Form to add a new comment -->
+      <form class="comment-form" action="/comment/{{post.id}}" method="post">
+        <label for="comment">Add a comment:</label>
+        <textarea name="content" id="comment" required></textarea>
+        <button type="submit">Submit Comment</button>
+      </form>
+    </div>
+  </article>
+  {{/each}}
+</section>

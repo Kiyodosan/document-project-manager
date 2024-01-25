@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Post1",
+        "content": "Post 1 content",
+        "date_created": "1/15/2024"
+    },
+    {
+        "title": "Post2",
+        "content": "Post 2 content",
+        "date_created": "1/09/2024"
+    },
+    {
+        "title": "Post3",
+        "content": "Post 3 content",
+        "date_created": "1/01/2024"
+    }
+]

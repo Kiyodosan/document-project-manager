@@ -1,0 +1,29 @@
+<article>
+  <div>
+    <h2 class="title">{{post.title}}</h2>
+  </div>
+
+  <div>
+    <p class="content">{{post.content}}</p>
+  </div>
+
+  <div>
+    <p>Created by: {{post.user.name}}</p>
+    <p>Created on: {{format_date post.date_created}}</p>
+  </div>
+
+  <!-- Display comments -->
+  {{#each post.comments}}
+    <div>
+      <p>{{this.content}}</p>
+      <!-- Include additional information like the comment author or timestamp here if needed -->
+    </div>
+  {{/each}}
+
+  <!-- Form to add a new comment -->
+  <form action="/api/comments/{{this.id}}" method="patch">
+    <label for="comment">Update comment:</label>
+    <textarea name="content" id="comment" required>{{this.content}}</textarea>
+    <button type="submit">Submit Update</button>
+  </form>
+</article>
