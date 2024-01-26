@@ -1,12 +1,6 @@
 module.exports = {
-  format_date: function (date) {
-    
-    if (date && typeof date.toLocaleDateString === 'function') {
-      // Format date as MM/DD/YYYY
-      return date.toLocaleDateString();
-    } else {
-     
-      return 'Invalid Date';
-    }
+  format_date: (date) => {
+    // Format date as MM/DD/YYYY
+    return date.toLocaleDateString();
   },
 };
