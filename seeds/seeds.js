@@ -12,14 +12,11 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  let idCount = 1;
   for (const post of postData) {
     await Post.create({
       ...post,
-      // user_id: users[Math.floor(Math.random() * users.length)].id,
-      user_id: idCount,
+      user_id: users[Math.floor(Math.random() * users.length)].id,
     });
-    idCount++;
   }
 
   process.exit(0);
