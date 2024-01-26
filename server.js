@@ -30,13 +30,25 @@ const sess = {
 
 app.use(session(sess));
 
+// Set the MIME type middleware for /post/js before serving static files
+app.use('/post/js', (req, res, next) => {
+  res.type('application/javascript');
+  next();
+});
+
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Serve static files from 'public' directory for the root path
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Serve static files from 'public/post' directory for the '/post' path
+app.use('/post', express.static(path.join(__dirname, 'public', 'post')));
+
+// Define your routes
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
