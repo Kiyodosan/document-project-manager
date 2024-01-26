@@ -4,8 +4,8 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all blog posts and JOIN with user data
-    const postData = await Post.findAll({
+    // Fetch posts data from the database
+    const posts = await Post.findAll({
       include: [
         {
           model: User,
@@ -14,16 +14,11 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    // Serialize data so the template can read it
-    const posts = postData.map((post) => post.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
-    res.render('home', { 
-      posts, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
+    // Render the home page with posts data
+    res.render('home', { posts, logged_in: req.session.logged_in });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
   }
 });
 
@@ -40,11 +35,8 @@ router.get('/post/:id', async (req, res) => {
 
     const post = postData.get({ plain: true });
 
-    res.render('post', {
-      // ...post,
-      post,
-      logged_in: req.session.logged_in
-    });
+    // Render the post page with post data
+    res.render('post', { post, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -53,7 +45,7 @@ router.get('/post/:id', async (req, res) => {
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
+    // Find the logged-in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Post }],
@@ -61,10 +53,8 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
-      ...user,
-      logged_in: true
-    });
+    // Render the profile page with user data
+    res.render('profile', { ...user, logged_in: true });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -77,21 +67,13 @@ router.get('/login', (req, res) => {
     return;
   }
 
+  // Render the login page
   res.render('login');
 });
 
 router.get('/signup', (req, res) => {
+  // Render the signup page
   res.render('signup');
-})
-router.post('/users/logout', async (req, res) => {
-  try {
-    // Destroy the session to log the user out
-    req.session.destroy(() => {
-      res.status(204).end(); // No Content
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
 });
 
 module.exports = router;
