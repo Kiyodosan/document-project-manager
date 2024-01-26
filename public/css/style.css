@@ -25,20 +25,21 @@ body {
   overflow-x:hidden;
 }
  
-.bg-image {
+/* .bg-image {
   background-image: url('/assets/images/hs-bg-image.jpg');
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
+} */
 
 /* primary header */
 .nav-logo {
   margin: 2rem;
   width: 3rem;
 }
+
 
 .primary-header {
   align-items: center;
@@ -55,7 +56,21 @@ body {
   margin: 0;
   background-color: hsl(0 0% 0% / 0.5);
 }
+.primary-nav a:hover {
+  color: #00d9ff; /* Change to the desired color on hover */
+  text-decoration: underline; /* You can customize the underline or other styles */
+}
 
+/* Add hover effect to mobile navbar toggle button */
+.mobile-nav-toggle:hover {
+  filter: brightness(1.2); /* Adjust brightness on hover */
+}
+.center-text {
+  text-align: center;
+}
+.center-container {
+  text-align: center;
+}
 /* The @supports code block checks to see if the CSS property in parentheses is supported by the browser. */
 /* Code within the code block allows us to use situational CSS if the property is supported. */
 @supports (backdrop-filter: blur(1rem)) {
@@ -99,7 +114,7 @@ body {
     position: absolute;
     z-index: 9999;
     background-color: transparent;
-    background-image: url('../assets/images/icons8-menu.svg');
+    background-image: url('/assets/images/icons8-menu.svg');
     background-repeat: no-repeat;
     background-size: contain;
     width: 2rem;
@@ -111,7 +126,11 @@ body {
   }
 
   .mobile-nav-toggle[aria-expanded="true"] {
-     background-image: url('../assets/images/icons8-cancel.svg');
+    background-image: url('/assets/images/icons8-cancel.svg');
+  }
+
+  .nav-logo {
+    margin-top: 0.5rem;
   }
 }
 

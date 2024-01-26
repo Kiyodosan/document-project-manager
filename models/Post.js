@@ -1,7 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const User = require('./User'); // Import the User model
-const Comment = require('./comment'); // Import the Comment model
+
+
+
 
 class Post extends Model {}
 
@@ -19,12 +20,27 @@ Post.init(
     },
     content: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     date_created: {
-      type: DataTypes.DATE,
+    	type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
     },
+    file_url: {
+      type: DataTypes.STRING,
+      defaultValue: null,
+    },
+/* 		like_count: {
+			type: DataTypes.INTEGER,
+			defaultValue: 0,
+		}, */
+  
+// Got rid of comments datatype string
+
+/* 		comments_like_count: {
+			type: DataTypes.INTEGER,
+			defaultValue: 0,
+		}, */
     user_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -35,21 +51,11 @@ Post.init(
   },
   {
     sequelize,
-    timestamps: true,
+    timestamps: false, 
     freezeTableName: true,
-    underscored: true,
-    modelName: 'post',
+    underscored: true, 
+    modelName: 'post', 
   }
 );
-
-// Association with the User model
-Post.belongsTo(User, {
-  foreignKey: 'user_id',
-});
-
-// Association with the Comment model
-Post.hasMany(Comment, {
-  foreignKey: 'post_id',
-});
 
 module.exports = Post;

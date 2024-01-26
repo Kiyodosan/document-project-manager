@@ -1,8 +1,7 @@
-// userRoutes.js
 const router = require('express').Router();
 const { User } = require('../../models');
 
-router.post('/users', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const userData = await User.create({
       ...req.body
@@ -19,8 +18,7 @@ router.post('/users', async (req, res) => {
   }
 });
 
-
-router.post('/api/login', async (req, res) => {
+router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
@@ -48,18 +46,17 @@ router.post('/api/login', async (req, res) => {
     });
 
   } catch (err) {
-    console.error('Error in userRoutes:', err);
     res.status(400).json(err);
   }
 });
 
-router.post('/api/logout', (req, res) => {
+router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(200).json();
+      res.status(204).end();
     });
   } else {
-    res.status(404).json();
+    res.status(404).end();
   }
 });
 
