@@ -4,9 +4,9 @@
   </div>
 
   {{#if post.file_url}}
-  <div class="image-preview-single">
-    <img src="{{post.file_url}}" alt="Uploaded file" />
-  </div>
+    <div class="image-preview-single">
+      <img src="{{post.file_url}}" alt="Uploaded file" />
+    </div>
   {{/if}}
 
   <div>
@@ -19,17 +19,19 @@
   </div>
 </article>
 
-{{!-- test area --}}
+<!-- Test area -->
 <p id="postId">{{post.id}}</p>
 
 <article>
-  {{#if comments.content.length}}
-  <h2>Comments</h2>
+  {{#if comments.length}} 
+    <h2>Comments</h2>
 
-  {{#each comments as |comment|}}
-  <p>{{comment.content}}</p>
-  <p>by {{comment.user.name}}</p>
-  {{/each}}
+    {{#each comments as |comment|}}
+      <div>
+        <p>{{comment.content}}</p>
+        <p>by {{comment.user.name}}</p>
+      </div>
+    {{/each}}
   {{/if}}
 
   <textarea name="Comment area" id="comment" cols="30" rows="2" placeholder="Add a comment"></textarea>
