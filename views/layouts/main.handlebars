@@ -10,12 +10,10 @@
   <script src="/js/nav.js" defer></script>
 </head>
 
-<body>
+<body class="bg-image">
   <header class="primary-header flex">
     <div>
-
       <img src="/assets/images/logo-placeholder-image.png" alt="brand logo" class="nav-logo">
-
     </div>
     <button class="mobile-nav-toggle fill" aria-controls="primary-nav" aria-expanded="false">
       <span class="sr-only">Menu</span>
@@ -48,6 +46,8 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  <!-- jQuery CDN -->
 </body>
 
 </html>
