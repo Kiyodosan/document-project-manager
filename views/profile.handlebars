@@ -5,18 +5,19 @@
     <h3>New Post</h3>
 
     {{!-- Upload widget --}}
-    <form id="uploadForm">
+{{!--     <form id="uploadForm">
       <div>
         <input 
           id="fileData"
           type="hidden"
           name="fileData"
           role="uploadcare-uploader"
+          data-clearable="true"
         >
       </div>
 
       <input type="submit">
-    </form>
+    </form> --}}
     {{!-- /Upload widget --}}
 
     <form class="new-post-form">
@@ -25,17 +26,42 @@
         <input type="text" id="post-title" name="post-title" />
       </div>
 
+      {{!-- Image preview --}}
+      <div class="image-preview-single">
+        <img src="" alt="" />
+        <input
+          id="fileData"
+          type="hidden"
+          role="uploadcare-uploader"
+          data-clearable="true"
+          data-images-only="true"
+          data-public-key="09da1b6a2310b78c7326"
+        />
+      </div>
+      {{!-- /Image preview --}}
+
+{{!--       <div>
+        <input 
+          id="fileData"
+          type="hidden"
+          name="fileData"
+          role="uploadcare-uploader"
+          data-clearable="true"
+        >
+      </div> --}}
+
       <div>
         <label for="post-content">Content</label>
         <textarea id="post-content" name="post-content"></textarea>
       </div>
+      
       <div>
         <button type="submit">Create</button>
       </div>
     </form>
   </section>
 
-  {{!-- {{if blogPosts.length}} --}}
+  {{#if posts.length}}
   <section class="post-list">
     <h3>My Posts</h3>
 
@@ -55,14 +81,13 @@
     </article>
     {{/each}}
   </section>
-  {{!-- {{/if}} --}}
+  {{/if}}
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  <!-- jQuery CDN -->
 
 <script>
   UPLOADCARE_LOCALE = "en";
   UPLOADCARE_PUBLIC_KEY = "09da1b6a2310b78c7326";
+  UPLOADCARE_TABS = "file url facebook gdrive gphotos dropbox instagram flickr onedrive";
 </script>
 
 <script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js" charset="utf-8"></script>

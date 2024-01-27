@@ -3,6 +3,12 @@
     <h2 class="title">{{post.title}}</h2>
   </div>
 
+  {{#if post.file_url}}
+  <div class="image-preview-single">
+    <img src="{{post.file_url}}" alt="Uploaded file" />
+  </div>
+  {{/if}}
+
   <div>
     <p class="content">{{post.content}}</p>
   </div>
