@@ -36,12 +36,6 @@ const newFormHandler = async (event) => {
         alert('An error has occured while creating the post');
       }
     }
-
-/*     if (response.ok) {
-      document.location.replace('/profile');
-    } else {
-      alert('An error has occured while creating the post');
-    } */
   }
 };
 

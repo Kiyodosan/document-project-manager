@@ -40,7 +40,6 @@ body {
   width: 3rem;
 }
 
-
 .primary-header {
   align-items: center;
   justify-content: space-between;
@@ -56,6 +55,7 @@ body {
   margin: 0;
   background-color: hsl(0 0% 0% / 0.5);
 }
+
 .primary-nav a:hover {
   color: #00d9ff; /* Change to the desired color on hover */
   text-decoration: underline; /* You can customize the underline or other styles */
@@ -65,12 +65,15 @@ body {
 .mobile-nav-toggle:hover {
   filter: brightness(1.2); /* Adjust brightness on hover */
 }
+
 .center-text {
   text-align: center;
 }
+
 .center-container {
   text-align: center;
 }
+
 /* The @supports code block checks to see if the CSS property in parentheses is supported by the browser. */
 /* Code within the code block allows us to use situational CSS if the property is supported. */
 @supports (backdrop-filter: blur(1rem)) {
@@ -120,7 +123,6 @@ body {
     width: 2rem;
     border: 0;
     aspect-ratio: 1;
-    /* May need to change "top" and "right" position to center navbar menu button with different logo sizes */
     top: 3rem;
     right: 2rem;
   }
