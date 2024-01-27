@@ -1,11 +1,11 @@
 const commentFormHandler = async (event) => {
   event.preventDefault();
 
-  const content = document.querySelector('#comment').textContent.trim();
+  const content = document.querySelector('#comment').value.trim();
   const post_id = document.querySelector('#postId').textContent;
 
   if (content) {
-    const response = await fetch('/api/content', {
+    const response = await fetch('/api/comment', {
       method: 'POST',
       body: JSON.stringify({ content, post_id }),
       headers: {
@@ -14,11 +14,11 @@ const commentFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/post/' + post_id);
     } else {
       alert('An error has occured while creating the comment');
     }
   }
 };
 
-document.querySelector('#send-comment').addEventListener ('click', commentFormHandler);
+document.querySelector('#send-comment').addEventListener('click', commentFormHandler);
