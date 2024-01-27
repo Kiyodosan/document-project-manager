@@ -11,14 +11,14 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    comment: {
+    content: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    comment_like_count: {
+/*     comment_like_count: {
       type: DataTypes.INTEGER,
       defaultValue: 0,
-    },
+    }, */
     user_id: {
       type: DataTypes.INTEGER,
       references: {

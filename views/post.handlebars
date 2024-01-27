@@ -20,10 +20,20 @@
 </article>
 
 {{!-- test area --}}
+<p id="postId">{{post.id}}</p>
+
 <article>
-  <textarea name="Comment area" id="" cols="30" rows="10" placeholder="Add a comment"></textarea>
-  <button type="submit">Send</button>
+  {{#if comments.content.length}}
+  <h2>Comments</h2>
+
+  {{#each comments as |comment|}}
+  <p>{{comment.content}}</p>
+  <p>by {{comment.user.name}}</p>
+  {{/each}}
+  {{/if}}
+
+  <textarea name="Comment area" id="comment" cols="30" rows="2" placeholder="Add a comment"></textarea>
+  <button id="send-comment" type="submit">Send</button>
 </article>
 
-<p>{{post.id}}</p>
-<p>{{user.id}}</p>
+<script src="/js/commentBox.js"></script>
