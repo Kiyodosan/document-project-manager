@@ -2,7 +2,6 @@ const commentFormHandler = async (event) => {
   event.preventDefault();
 
   const content = document.querySelector('#comment').value.trim();
-  const content = document.querySelector('#comment').value.trim();
   const post_id = document.querySelector('#postId').textContent;
 
   if (content) {
