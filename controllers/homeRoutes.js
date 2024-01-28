@@ -47,7 +47,7 @@ router.get('/post/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['id', 'name'],
         }
       ],
     });
@@ -58,6 +58,7 @@ router.get('/post/:id', async (req, res) => {
       // ...post,
       post,
       comments,
+      // user_id: req.session.user_id,
       logged_in: req.session.logged_in
     });
   } catch (err) {

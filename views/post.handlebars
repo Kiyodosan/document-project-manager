@@ -21,13 +21,21 @@
 
 <p id="postId">{{post.id}}</p>
 
+{{#if comments.length}}
 <h2>Comments</h2>
 
-{{#if comments.length}}
 <article>
   {{#each comments as |comment|}}
-  <p>{{comment.content}}</p>
-  <p>by {{comment.user.name}}</p>
+  <div>
+    <p>{{comment.content}}</p>
+    <p>by {{comment.user.name}}</p>
+  </div>
+
+{{!--   {{#if (compare comment.user.id "===" user_id)}}
+  <div>
+    <button id="delete-comment" type="button" data-id="{{comment.id}}">Delete Comment</button>
+  </div>
+  {{/if}} --}}
   {{/each}}
 </article>
 {{/if}}
@@ -41,4 +49,6 @@
   {{/if}}
 </article>
 
+{{#if logged_in}}
 <script src="/js/commentBox.js"></script>
+{{/if}}
