@@ -19,23 +19,26 @@
   </div>
 </article>
 
-<!-- Test area -->
 <p id="postId">{{post.id}}</p>
 
+<h2>Comments</h2>
+
+{{#if comments.length}}
 <article>
-  {{#if comments.length}} 
-    <h2>Comments</h2>
+  {{#each comments as |comment|}}
+  <p>{{comment.content}}</p>
+  <p>by {{comment.user.name}}</p>
+  {{/each}}
+</article>
+{{/if}}
 
-    {{#each comments as |comment|}}
-      <div>
-        <p>{{comment.content}}</p>
-        <p>by {{comment.user.name}}</p>
-      </div>
-    {{/each}}
-  {{/if}}
-
+<article>
+  {{#if logged_in}}
   <textarea name="Comment area" id="comment" cols="30" rows="2" placeholder="Add a comment"></textarea>
   <button id="send-comment" type="submit">Send</button>
+  {{else}}
+  <a href="/login">Sign in to post a comment</a>
+  {{/if}}
 </article>
 
 <script src="/js/commentBox.js"></script>
