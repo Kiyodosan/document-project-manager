@@ -22,20 +22,35 @@ const commentFormHandler = async (event) => {
 };
 
 const deleteFormHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+  if (event.target.matches('.delete-comment')) {
+    const commentId = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/comment/${id}`, {
-      method: 'DELETE',
-    });
+    try {
+      const response = await fetch(`/api/comment/${commentId}`, {
+        method: 'DELETE',
+      });
 
-    if (response.ok) {
-      document.location.replace('/post/' + post_id);
-    } else {
-      alert('An error has occured while deleting the comment');
+      if (response.ok) {
+        document.location.reload();
+      } else {
+        console.error('Error deleting comment:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Unexpected error:', error);
     }
   }
 };
 
+document.body.addEventListener('click', async function (event) {
+  console.log('Body clicked!');
+  if (event.target.hasAttribute('data-id')) {
+    await deleteFormHandler(event);
+  }
+});
+
 document.querySelector('#send-comment').addEventListener('click', commentFormHandler);
-document.querySelector('#delete-comment').addEventListener('click', deleteFormHandler);
+document.body.addEventListener('click', async function (event) {
+  if (event.target.hasAttribute('data-id')) {
+    await deleteFormHandler(event);
+  }
+});
