@@ -29,14 +29,14 @@ body {
   overflow-x:hidden;
 }
  
-/* .bg-image {
-  background-image: url('/assets/images/hs-bg-image.jpg');
+.bg-image {
+  background-image: url('/assets/images/360_F_470310483_Ru94TDoJPupOo8DB07SNgxNmklT39mIm.jpg');
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-} */
+}
 
 /* primary header */
 .nav-logo {
