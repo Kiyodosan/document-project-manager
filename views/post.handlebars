@@ -28,7 +28,7 @@
   {{#each comments as |comment|}}
   <div>
     <p>{{comment.content}}</p>
-    <p>by {{comment.user.name}}</p>
+    <p class="bold-500">by {{comment.user.name}}</p>
   </div>
 
 {{!--   {{#if (compare comment.user.id "===" user_id)}}
