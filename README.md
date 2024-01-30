@@ -18,8 +18,8 @@ Table of contents
 
 ## How To Run Application
 
-* Click link below to launch app
-* [Insert Link]
+Click link below to launch app
+* https://document-project-manager-43ce028ce2c1.herokuapp.com/
 
 ## Functionality
 
