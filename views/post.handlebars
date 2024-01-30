@@ -14,8 +14,8 @@
   </div>
 
   <div>
-    <p>Created by: {{post.user.name}}</p>
-    <p>Created on: {{format_date post.date_created}}</p>
+    <p class="bold-500">Created by: {{post.user.name}}</p>
+    <p class="bold-500">Created on: {{format_date post.date_created}}</p>
   </div>
 </article>
 
@@ -28,7 +28,7 @@
   {{#each comments as |comment|}}
   <div>
     <p>{{comment.content}}</p>
-    <p>by {{comment.user.name}}</p>
+    <p class="bold-500">by {{comment.user.name}}</p>
   </div>
 
 {{!--   {{#if (compare comment.user.id "===" user_id)}}
